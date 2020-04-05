@@ -1,0 +1,186 @@
+﻿<Window
+    x:Class="TajikSpeechRecognition.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:TajikSpeechRecognition"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Home">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <StackPanel Margin="10" Orientation="Horizontal">
+                        <Button
+                            x:Name="BuildModel"
+                            Width="150"
+                            Height="60"
+                            Click="BuildModel_Click"
+                            Content="Generate model" />
+
+                        <Button
+                            x:Name="RunModel"
+                            Width="150"
+                            Height="60"
+                            Margin="10,0"
+                            Click="RunModel_Click"
+                            Content="Run model" />
+
+                    </StackPanel>
+                    <RichTextBox
+                        x:Name="Logger"
+                        Grid.Row="1"
+                        Block.LineHeight="1"
+                        HorizontalScrollBarVisibility="Auto"
+                        IsReadOnly="True"
+                        VerticalScrollBarVisibility="Auto" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Speakers">
+                <Grid>
+                    <DataGrid
+                        Margin="0,8,0,0"
+                        AutoGenerateColumns="False"
+                        CanUserAddRows="False"
+                        EnableRowVirtualization="True"
+                        ItemsSource="{Binding Speakers}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn
+                                Width="*"
+                                MaxWidth="400"
+                                Binding="{Binding Name}"
+                                Header="Name"
+                                IsReadOnly="True" />
+
+                            <DataGridTextColumn
+                                Width="*"
+                                MaxWidth="150"
+                                Binding="{Binding Age}"
+                                Header="Age"
+                                IsReadOnly="True" />
+
+                            <DataGridTextColumn
+                                Width="*"
+                                MaxWidth="200"
+                                Binding="{Binding IsMale}"
+                                Header="IsMale"
+                                IsReadOnly="True" />
+
+                            <DataGridTextColumn
+                                Width="*"
+                                MaxWidth="200"
+                                Binding="{Binding Audios.Count}"
+                                Header="Audios amount"
+                                IsReadOnly="True" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button
+                        x:Name="AddNewSpeaker"
+                        Margin="0,0,20,20"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Click="AddNewSpeaker_Click"
+                        ToolTip="Add new speaker">
+                        Add new speaker
+                    </Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Texts">
+                <Grid>
+                    <DataGrid
+                        Margin="0,8,0,0"
+                        AutoGenerateColumns="False"
+                        CanUserAddRows="False"
+                        EnableRowVirtualization="True"
+                        ItemsSource="{Binding Texts}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn
+                                Width="*"
+                                MaxWidth="500"
+                                Binding="{Binding Value}"
+                                Header="Text"
+                                IsReadOnly="True" />
+
+                            <DataGridTextColumn
+                                Width="*"
+                                MaxWidth="250"
+                                Binding="{Binding Description}"
+                                Header="Description"
+                                IsReadOnly="True" />
+
+                            <DataGridTextColumn
+                                Width="*"
+                                MaxWidth="120"
+                                Binding="{Binding ExpectedTime}"
+                                Header="Expected time"
+                                IsReadOnly="True" />
+
+                            <DataGridTextColumn
+                                Width="*"
+                                MaxWidth="150"
+                                Binding="{Binding Audios.Count}"
+                                Header="Audios amount"
+                                IsReadOnly="True" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button
+                        x:Name="AddNewText"
+                        Margin="0,0,20,20"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Click="AddNewText_Click"
+                        ToolTip="Add new text">
+                        Add new text
+                    </Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Audios">
+                <Grid>
+                    <DataGrid
+                        Margin="0,8,0,0"
+                        AutoGenerateColumns="False"
+                        CanUserAddRows="False"
+                        EnableRowVirtualization="True"
+                        ItemsSource="{Binding Audios}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn
+                                Width="*"
+                                MaxWidth="200"
+                                Binding="{Binding Speaker.Name}"
+                                Header="Speaker"
+                                IsReadOnly="True" />
+
+                            <DataGridTextColumn
+                                Width="*"
+                                MaxWidth="500"
+                                Binding="{Binding Text.Value}"
+                                Header="Text"
+                                IsReadOnly="True" />
+
+                            <DataGridTextColumn
+                                Width="*"
+                                MaxWidth="120"
+                                Binding="{Binding Text.ExpectedTime}"
+                                Header="Expected time"
+                                IsReadOnly="True" />
+
+                            <DataGridTextColumn
+                                Width="*"
+                                MaxWidth="120"
+                                Binding="{Binding FileName}"
+                                Header="File name"
+                                IsReadOnly="True" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

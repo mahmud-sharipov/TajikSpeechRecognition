@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TajikSpeechRecognition", "TajikSpeechRecognition\TajikSpeechRecognition.csproj", "{8FFC8373-7135-43CD-A883-9DB58D57BC97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TajikSpeechRecognition.Model", "TajikSpeechRecognition.Model\TajikSpeechRecognition.Model.csproj", "{453CF6F8-D3CE-46B2-A5C6-223BE8542855}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TajikSpeechRecognition.Core", "TajikSpeechRecognition.Core\TajikSpeechRecognition.Core.csproj", "{9F546831-AB22-4ABC-81CD-F0E9011C5B0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TajikSpeechRecognition.UI", "TajikSpeechRecognition.UI\TajikSpeechRecognition.UI.csproj", "{14D6A72B-EB38-4E43-9BE1-4B93CEFE50EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FFC8373-7135-43CD-A883-9DB58D57BC97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FFC8373-7135-43CD-A883-9DB58D57BC97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FFC8373-7135-43CD-A883-9DB58D57BC97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FFC8373-7135-43CD-A883-9DB58D57BC97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{453CF6F8-D3CE-46B2-A5C6-223BE8542855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{453CF6F8-D3CE-46B2-A5C6-223BE8542855}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{453CF6F8-D3CE-46B2-A5C6-223BE8542855}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{453CF6F8-D3CE-46B2-A5C6-223BE8542855}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F546831-AB22-4ABC-81CD-F0E9011C5B0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F546831-AB22-4ABC-81CD-F0E9011C5B0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F546831-AB22-4ABC-81CD-F0E9011C5B0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F546831-AB22-4ABC-81CD-F0E9011C5B0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14D6A72B-EB38-4E43-9BE1-4B93CEFE50EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14D6A72B-EB38-4E43-9BE1-4B93CEFE50EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14D6A72B-EB38-4E43-9BE1-4B93CEFE50EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14D6A72B-EB38-4E43-9BE1-4B93CEFE50EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A680D273-C11C-4B3D-A6D3-1CC209A0E230}
+	EndGlobalSection
+EndGlobal
