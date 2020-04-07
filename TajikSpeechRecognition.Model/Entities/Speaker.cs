@@ -36,6 +36,8 @@
             get => _audios;
             set => OnPropertySetting(nameof(Audios), value, ref _audios);
         }
+
+        public override string ToString() => Name;
     }
 
     public class SpeakerConfiguration

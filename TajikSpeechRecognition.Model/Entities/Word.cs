@@ -26,6 +26,8 @@ namespace TajikSpeechRecognition.Model
             get => _phonemes;
             set => OnPropertySetting(nameof(Phonemes), value, ref _phonemes);
         }
+
+        public override string ToString() => Value;
     }
 
     public class WordConfiguration

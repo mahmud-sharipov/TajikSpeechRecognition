@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using TajikSpeechRecognition.UI.General;
-using TajikSpeechRecognition.Model;
+﻿using MaterialDesignThemes.Wpf;
 using System.Collections.ObjectModel;
+using System.IO;
+using System.Linq;
 using System.Windows.Input;
-using MaterialDesignThemes.Wpf;
+using TajikSpeechRecognition.Core;
+using TajikSpeechRecognition.Model;
+using TajikSpeechRecognition.UI.General;
 using TajikSpeechRecognition.UI.Pages;
+using TajikSpeechRecognition.UI.Services;
 
 namespace TajikSpeechRecognition.UI.ViewModels
 {
@@ -45,48 +45,17 @@ namespace TajikSpeechRecognition.UI.ViewModels
             var audio = a as Audio;
             if (audio != null)
             {
-                DataProvider.Delete(audio);
+                AudioService.RemoveAudio(audio, DataProvider);
                 Audios.Remove(audio);
-                DataProvider.SaveChanges();
             }
         });
 
-        #region Add new Audio
         public ICommand AddNewAudio => new Command(AddAudio);
-
-        public Audio NewAudio { get; set; }
 
         private async void AddAudio(object o)
         {
-            var viewModel = new AudioViewModel();
-            NewAudio = viewModel.Audio;
-            await DialogHost.Show(new TextPage() { DataContext = viewModel }, DialodIdentifiers.EntireWindow, ClosingEventHandler);
+            var viewModel = new AudioViewModel(Audios);
+            await DialogHost.Show(new AudioPage() { DataContext = viewModel }, DialodIdentifiers.EntireWindow, AudioViewModel.ClosingEventHandler);
         }
-
-        private void ClosingEventHandler(object sender, DialogClosingEventArgs eventArgs)
-        {
-            if ((bool)eventArgs.Parameter == false)
-                NewAudio = null;
-            else
-            {
-                DataProvider.Add(NewAudio);
-                DataProvider.SaveChanges();
-                Audios.Add(NewAudio);
-                SelectedAudio = NewAudio;
-                NewAudio = null;
-                DataProvider.SaveChanges();
-            }
-            //eventArgs.Cancel();
-        }
-
-        protected string GetWordPhonemes(string word)
-        {
-            var phonemes = "";
-            foreach (var char_ in word)
-                phonemes += Core.Phonemes.List[char_.ToString()] + " ";
-
-            return phonemes.Trim();
-        }
-        #endregion
     }
 }

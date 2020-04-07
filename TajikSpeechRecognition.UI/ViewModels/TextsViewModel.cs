@@ -1,10 +1,13 @@
 ﻿using MaterialDesignThemes.Wpf;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Windows.Input;
+using TajikSpeechRecognition.Core;
 using TajikSpeechRecognition.Model;
 using TajikSpeechRecognition.UI.General;
 using TajikSpeechRecognition.UI.Pages;
+using TajikSpeechRecognition.UI.Services;
 
 namespace TajikSpeechRecognition.UI.ViewModels
 {
@@ -42,9 +45,8 @@ namespace TajikSpeechRecognition.UI.ViewModels
             var audio = a as Audio;
             if (audio != null)
             {
-                DataProvider.Delete(audio);
+                AudioService.RemoveAudio(audio, DataProvider);
                 SelectedText.Audios.Remove(audio);
-                DataProvider.SaveChanges();
             }
         });
 
@@ -67,7 +69,6 @@ namespace TajikSpeechRecognition.UI.ViewModels
             else
             {
                 DataProvider.Add(NewText);
-                DataProvider.SaveChanges();
                 Texts.Add(NewText);
                 SelectedText = NewText;
                 var words = DataProvider.GetEntities<Word>();

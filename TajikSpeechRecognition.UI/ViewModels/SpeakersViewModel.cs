@@ -5,6 +5,7 @@ using System.Windows.Input;
 using TajikSpeechRecognition.Model;
 using TajikSpeechRecognition.UI.General;
 using TajikSpeechRecognition.UI.Pages;
+using TajikSpeechRecognition.UI.Services;
 
 namespace TajikSpeechRecognition.UI.ViewModels
 {
@@ -42,9 +43,8 @@ namespace TajikSpeechRecognition.UI.ViewModels
             var audio = a as Audio;
             if (audio != null)
             {
-                DataProvider.Delete(audio);
+                AudioService.RemoveAudio(audio, DataProvider);
                 SelectedSpeaker.Audios.Remove(audio);
-                DataProvider.SaveChanges();
             }
         });
 

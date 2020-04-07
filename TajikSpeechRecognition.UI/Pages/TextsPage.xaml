@@ -138,7 +138,7 @@
                                             Command="{Binding ElementName=thisPage, Path=DataContext.DeleteAudio}"
                                             CommandParameter="{Binding}"
                                             Style="{StaticResource MaterialDesignFlatButton}"
-                                            ToolTip="Play audio">
+                                            ToolTip="Delete audio">
                                             <materialDesign:PackIcon
                                                 Width="24"
                                                 Height="24"

@@ -57,6 +57,8 @@
 
             return newText.Trim().Replace("  ", " ");
         }
+
+        public override string ToString() => Value;
     }
 
     public class TextConfiguration

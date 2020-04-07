@@ -29,6 +29,8 @@
             get => _speaker;
             set => OnPropertySetting(nameof(Speaker), value, ref _speaker);
         }
+
+        public override string ToString() => FileName;
     }
 
     public class AudioConfiguration

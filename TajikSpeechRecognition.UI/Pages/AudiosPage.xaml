@@ -1,5 +1,6 @@
 ﻿<localGeneral:BasePage
     x:Class="TajikSpeechRecognition.UI.Pages.AudiosPage"
+    x:Name="thisPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -26,30 +27,37 @@
                         <DataGrid.Columns>
                             <DataGridTextColumn
                                 Width="*"
+                                MaxWidth="200"
+                                Binding="{Binding FileName}"
+                                Header="File name"
+                                IsReadOnly="True" />
+
+                            <DataGridTextColumn
+                                Width="auto"
+                                MinWidth="200"
+                                Binding="{Binding Text.Value}"
+                                Header="Text"
+                                IsReadOnly="True" />
+                            
+                            <DataGridTextColumn
+                                Width="auto"
+                                MinWidth="150"
+                                Binding="{Binding Text.Description}"
+                                Header="Description"
+                                IsReadOnly="True" />
+
+                            <DataGridTextColumn
+                                Width="*"
                                 MaxWidth="350"
                                 Binding="{Binding Speaker.Name}"
                                 Header="Speaker"
                                 IsReadOnly="True" />
-
-                            <DataGridTextColumn
-                                Width="auto"
-                                MaxWidth="250"
-                                Binding="{Binding Speaker.Age}"
-                                Header="Age"
-                                IsReadOnly="True" />
-
+                            
                             <DataGridTextColumn
                                 Width="auto"
                                 MaxWidth="150"
-                                Binding="{Binding Speaker.IsMale}"
-                                Header="Male"
-                                IsReadOnly="True" />
-
-                            <DataGridTextColumn
-                                Width="auto"
-                                MaxWidth="150"
-                                Binding="{Binding Speaker.Audios.Count}"
-                                Header="Total audio"
+                                Binding="{Binding Text.ExpectedTime}"
+                                Header="Expected time"
                                 IsReadOnly="True" />
 
                             <DataGridTemplateColumn Width="60">
@@ -78,7 +86,7 @@
                                             Command="{Binding ElementName=thisPage, Path=DataContext.DeleteAudio}"
                                             CommandParameter="{Binding}"
                                             Style="{StaticResource MaterialDesignFlatButton}"
-                                            ToolTip="Play audio">
+                                            ToolTip="Delete audio">
                                             <materialDesign:PackIcon
                                                 Width="24"
                                                 Height="24"
@@ -90,6 +98,18 @@
                             </DataGridTemplateColumn>
                         </DataGrid.Columns>
                     </DataGrid>
+                    <Button
+                        Margin="0,0,20,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Command="{Binding AddNewAudio}"
+                        Style="{StaticResource MaterialDesignFloatingActionButton}"
+                        ToolTip="Add new speaker">
+                        <materialDesign:PackIcon
+                            Width="20"
+                            Height="20"
+                            Kind="Plus" />
+                    </Button>
                     <StackPanel
                         Grid.Row="1"
                         Width="150"
