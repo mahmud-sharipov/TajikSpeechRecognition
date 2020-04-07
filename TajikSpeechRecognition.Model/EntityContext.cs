@@ -1,11 +1,13 @@
 ﻿using MySql.Data.Entity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Configuration;
 using System.Data.Entity;
 using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,7 +15,7 @@ namespace TajikSpeechRecognition.Model
 {
 
     [DbConfigurationType(typeof(MySqlEFConfiguration))]
-    public class EntityContext : DbContext
+    public class EntityContext : DbContext, INotifyPropertyChanged
     {
         public EntityContext() : base(GetConnectionString("dataset_app_db"))
         {
@@ -115,11 +117,27 @@ namespace TajikSpeechRecognition.Model
 
         #endregion
 
-        public bool IsMarkedAsDeleted(EntityBase entity) => 
+        #region DbSets
+
+        public DbSet<Text> Texts { get; set; }
+
+        public DbSet<Speaker> Speakers { get; set; }
+
+        public DbSet<Word> Words { get; set; }
+
+        public DbSet<Audio> Audios { get; set; }
+
+        #endregion
+
+        public bool IsMarkedAsDeleted(EntityBase entity) =>
             Entry(entity).State == EntityState.Deleted || Entry(entity).State == EntityState.Detached;
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder) =>
             DbModelBuilderManager.BuildModels(modelBuilder);
 
+        #region INotifyPropertyChanged
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void RaisePropertyChanged([CallerMemberName] string propertyName = "") => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        #endregion
     }
 }

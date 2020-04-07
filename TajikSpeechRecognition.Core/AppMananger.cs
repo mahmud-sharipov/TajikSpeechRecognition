@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TajikSpeechRecognition
+namespace TajikSpeechRecognition.Core
 {
     public static class AppManager
     {

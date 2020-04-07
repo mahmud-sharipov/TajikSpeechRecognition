@@ -61,5 +61,11 @@
       <Version>6.9.12</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TajikSpeechRecognition.Core\TajikSpeechRecognition.Core.csproj">
+      <Project>{9f546831-ab22-4abc-81cd-f0e9011c5b0c}</Project>
+      <Name>TajikSpeechRecognition.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

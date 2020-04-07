@@ -51,15 +51,12 @@
             var newText = "";
             foreach (var char_ in text)
             {
-                if (char_ == ' ' || Phonems.Any(ch => ch == char_))
+                if (char_ == ' ' || Core.Phonemes.List.ContainsKey(char_.ToString()))
                     newText += char_.ToString();
             }
 
             return newText.Trim().Replace("  ", " ");
         }
-
-        public static List<char> Phonems =>
-            new List<char>() { 'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ч', 'ш', 'ъ', 'э', 'ю', 'я', 'ғ', 'ӣ', 'қ', 'ӯ', 'ҳ', 'ҷ' };
     }
 
     public class TextConfiguration
