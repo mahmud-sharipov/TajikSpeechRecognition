@@ -8,44 +8,37 @@
              xmlns:materialDesign="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid >
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="auto"/>
-            </Grid.ColumnDefinitions>
-            <Button Style="{StaticResource MaterialDesignRaisedLightButton}" Background="Orange" FontSize="18" Content="Clear" Margin="5" Width="150" Height="55" VerticalAlignment="Center" Grid.Column="1"/>
-            <TextBox
-                FontSize="16"
-                Style="{StaticResource MaterialDesignFilledTextFieldTextBox}"
-                Text="{Binding LogSearchText}"
-                AcceptsReturn="True"
-                TextWrapping="Wrap"
-                VerticalAlignment="Center"
-                materialDesign:HintAssist.Hint="Search..." />
-        </Grid>
-        <Grid Grid.Row="1">
-            <ScrollViewer VerticalScrollBarVisibility="Auto" SizeChanged="ScrollViewer_SizeChanged" x:Name="Scrol">
-                <ItemsControl ItemsSource="{Binding Logs}">
+    <Grid x:Name="MainGrid" Margin="0 30 0 0">
+        <materialDesign:Card Height="{Binding ElementName=MainGrid, Path=ActualHeight}">
+            <Grid>
+                <ListBox ItemsSource="{x:Static localGenerel:LogManager.Logs}" 
+                    VirtualizingPanel.IsVirtualizing="True"
+                    VirtualizingPanel.CacheLengthUnit="Item"
+                    VirtualizingPanel.IsContainerVirtualizable="True"
+                    VirtualizingPanel.ScrollUnit="Item"
+                    VirtualizingPanel.VirtualizationMode="Recycling"
+                    ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="0 -8">
+                                <localControls:LogControl Log="{Binding}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
                             <VirtualizingStackPanel/>
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel>
-                                <TextBlock Text="{Binding Type}"/>
-                                <localControls:LogControl LogType="{Binding Type}" Value="{Binding Log}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </ScrollViewer>
-        </Grid>
+                </ListBox>
+                <Button Style="{StaticResource MaterialDesignFloatingActionLightButton}" 
+                        Margin="0 0 20 10"
+                    Background="Orange" FontSize="18"
+                    Command="{Binding Cleare}"
+                    VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                    <materialDesign:PackIcon Kind="Broom" Height="30" Width="30"/>
+                </Button>
+            </Grid>
+        </materialDesign:Card>
     </Grid>
 </UserControl>
