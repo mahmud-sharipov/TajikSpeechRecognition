@@ -56,7 +56,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\LogControl.xaml.cs">
+      <DependentUpon>LogControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LogViewerControl.xaml.cs">
+      <DependentUpon>LogViewerControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="General\AudioPlayer.cs" />
+    <Compile Include="General\LogItem.cs" />
+    <Compile Include="General\LogManager.cs" />
+    <Compile Include="General\LogType.cs" />
     <Compile Include="General\UIManager.cs" />
     <Compile Include="Pages\AudioPage.xaml.cs">
       <DependentUpon>AudioPage.xaml</DependentUpon>
@@ -76,6 +85,14 @@
     <Compile Include="ViewModels\SpeakerViewModel.cs" />
     <Compile Include="ViewModels\TextsViewModel.cs" />
     <Compile Include="ViewModels\TextViewModel.cs" />
+    <Page Include="Controls\LogControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\LogViewerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -5,11 +5,18 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:TajikSpeechRecognition.UI.Pages"
     xmlns:localGeneral="clr-namespace:TajikSpeechRecognition.UI.General"
+    xmlns:localControl="clr-namespace:TajikSpeechRecognition.UI.Controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
     <Grid>
-        <TextBlock Text="Home" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <localControl:LogViewerControl/>
+        </Grid>
     </Grid>
 </localGeneral:BasePage>

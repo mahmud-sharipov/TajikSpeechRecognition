@@ -6,9 +6,6 @@ namespace TajikSpeechRecognition.UI.Controls
     [TemplatePart(Name = "Border", Type = typeof(Border))]
     public class LoadingIndicator : Control
     {
-        /// <summary>
-        /// Identifies the <see cref="LoadingIndicators.WPF.LoadingIndicator.SpeedRatio"/> dependency property.
-        /// </summary>
         public static readonly DependencyProperty SpeedRatioProperty =
             DependencyProperty.Register("SpeedRatio", typeof(double), typeof(LoadingIndicator), new PropertyMetadata(1d, (o, e) =>
             {

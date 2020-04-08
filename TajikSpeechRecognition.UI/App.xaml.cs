@@ -9,6 +9,7 @@ namespace TajikSpeechRecognition.UI
         public App()
         {
             UIManager.DataProvider = new DataProvider();
+            UIManager.LogManager = new LogManager();
         }
     }
 }
