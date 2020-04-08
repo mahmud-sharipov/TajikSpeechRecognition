@@ -1,12 +1,8 @@
-﻿using MaterialDesignThemes.Wpf;
-using System.Collections.ObjectModel;
-using System.IO;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
-using TajikSpeechRecognition.Core;
 using TajikSpeechRecognition.Model;
 using TajikSpeechRecognition.UI.General;
-using TajikSpeechRecognition.UI.Pages;
 using TajikSpeechRecognition.UI.Services;
 
 namespace TajikSpeechRecognition.UI.ViewModels
@@ -19,7 +15,7 @@ namespace TajikSpeechRecognition.UI.ViewModels
         }
 
         private ObservableCollection<Audio> _Audios;
-        public virtual ObservableCollection<Audio> Audios
+        public ObservableCollection<Audio> Audios
         {
             get => _Audios;
             set
@@ -49,13 +45,5 @@ namespace TajikSpeechRecognition.UI.ViewModels
                 Audios.Remove(audio);
             }
         });
-
-        public ICommand AddNewAudio => new Command(AddAudio);
-
-        private async void AddAudio(object o)
-        {
-            var viewModel = new AudioViewModel(Audios);
-            await DialogHost.Show(new AudioPage() { DataContext = viewModel }, DialodIdentifiers.EntireWindow, AudioViewModel.ClosingEventHandler);
-        }
     }
 }

@@ -1,7 +1,5 @@
 ﻿namespace TajikSpeechRecognition.Model
 {
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
     using System.Data.Entity;
     public class Audio : EntityBase
     {

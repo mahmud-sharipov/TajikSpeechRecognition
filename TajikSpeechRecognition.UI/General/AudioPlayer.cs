@@ -1,8 +1,5 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Media;
+﻿using System.Media;
 using System.Windows.Input;
-using System.Windows.Media;
 using TajikSpeechRecognition.Core;
 using TajikSpeechRecognition.Model;
 

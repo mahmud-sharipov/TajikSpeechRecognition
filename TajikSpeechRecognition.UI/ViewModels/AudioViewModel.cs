@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using TajikSpeechRecognition.Core;
 using TajikSpeechRecognition.Model;
@@ -88,7 +87,7 @@ namespace TajikSpeechRecognition.UI.ViewModels
             var result = AudioService.SaveAudio(Audio, DataProvider);
             if (result.Item1)
             {
-                Audios.Add(Audio);
+                Audios?.Add(Audio);
                 Audio = new Audio()
                 {
                     Speaker = Audio.Speaker,
@@ -208,7 +207,7 @@ namespace TajikSpeechRecognition.UI.ViewModels
             {
                 var result = AudioService.SaveAudio(audio, viewModel.DataProvider);
                 if (result.Item1)
-                    viewModel.Audios.Add(audio);
+                    viewModel.Audios?.Add(audio);
                 else
                 {
                     viewModel.Error = result.Item2;

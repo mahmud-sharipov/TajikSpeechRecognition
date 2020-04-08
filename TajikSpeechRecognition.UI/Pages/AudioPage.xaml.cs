@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using TajikSpeechRecognition.UI.General;
+﻿using TajikSpeechRecognition.UI.General;
 using TajikSpeechRecognition.UI.ViewModels;
 
 namespace TajikSpeechRecognition.UI.Pages

@@ -6,6 +6,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:localGeneral="clr-namespace:TajikSpeechRecognition.UI.General"
+    xmlns:localServices="clr-namespace:TajikSpeechRecognition.UI.Services"
     xmlns:materialDesign="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
     d:DesignHeight="450"
     d:DesignWidth="800"
@@ -38,7 +39,7 @@
                                 Binding="{Binding Text.Value}"
                                 Header="Text"
                                 IsReadOnly="True" />
-                            
+
                             <DataGridTextColumn
                                 Width="auto"
                                 MinWidth="150"
@@ -52,7 +53,7 @@
                                 Binding="{Binding Speaker.Name}"
                                 Header="Speaker"
                                 IsReadOnly="True" />
-                            
+
                             <DataGridTextColumn
                                 Width="auto"
                                 MaxWidth="150"
@@ -60,7 +61,7 @@
                                 Header="Expected time"
                                 IsReadOnly="True" />
 
-                            <DataGridTemplateColumn Width="60">
+                            <DataGridTemplateColumn MinWidth="60" MaxWidth="60">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Button
@@ -78,7 +79,7 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Width="60">
+                            <DataGridTemplateColumn MinWidth="60" MaxWidth="60">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Button
@@ -102,7 +103,8 @@
                         Margin="0,0,20,0"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Bottom"
-                        Command="{Binding AddNewAudio}"
+                        Command="{x:Static localServices:AudioService.AddNewAudio}"
+                        CommandParameter="{Binding Audios}"
                         Style="{StaticResource MaterialDesignFloatingActionButton}"
                         ToolTip="Add new speaker">
                         <materialDesign:PackIcon

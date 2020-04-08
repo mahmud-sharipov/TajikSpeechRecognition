@@ -1,9 +1,7 @@
 ﻿using MaterialDesignThemes.Wpf;
 using System.Collections.ObjectModel;
-using System.IO;
 using System.Linq;
 using System.Windows.Input;
-using TajikSpeechRecognition.Core;
 using TajikSpeechRecognition.Model;
 using TajikSpeechRecognition.UI.General;
 using TajikSpeechRecognition.UI.Pages;

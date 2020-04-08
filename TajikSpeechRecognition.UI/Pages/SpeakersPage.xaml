@@ -7,6 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:materialDesign="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
     xmlns:localGeneral="clr-namespace:TajikSpeechRecognition.UI.General"
+    xmlns:localServices="clr-namespace:TajikSpeechRecognition.UI.Services"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
@@ -35,7 +36,7 @@
                                             <ColumnDefinition />
                                         </Grid.ColumnDefinitions>
                                         <ToggleButton VerticalAlignment="Center" Style="{StaticResource MaterialDesignActionLightToggleButton}">
-                                            <materialDesign:PackIcon Kind="Speaker" />
+                                            <materialDesign:PackIcon Kind="User" />
                                         </ToggleButton>
                                         <StackPanel Grid.Column="1" Margin="15,0,0,0">
                                             <TextBlock FontWeight="Bold" Text="{Binding Name}" />
@@ -102,7 +103,7 @@
                                 Header="Expected time"
                                 IsReadOnly="True" />
 
-                            <DataGridTemplateColumn Width="50">
+                            <DataGridTemplateColumn MinWidth="60" MaxWidth="60">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Button
@@ -120,7 +121,7 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Width="50">
+                            <DataGridTemplateColumn MinWidth="60" MaxWidth="60">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Button
@@ -142,18 +143,32 @@
                     </DataGrid>
                     <StackPanel
                         Grid.Row="1"
-                        Width="150"
                         Margin="5"
                         HorizontalAlignment="Right"
                         Orientation="Horizontal">
                         <TextBlock
                             FontSize="20"
+                            VerticalAlignment="Center"
                             FontWeight="Bold"
                             Text="Total audio: " />
                         <TextBlock
                             FontSize="20"
+                            VerticalAlignment="Center"
                             FontWeight="Bold"
                             Text="{Binding SelectedSpeaker.Audios.Count}" />
+                        <Button
+                                Margin="30,0,20,0"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Bottom"
+                                Command="{x:Static localServices:AudioService.AddNewAudio}"
+                                CommandParameter="{Binding SelectedSpeaker}"
+                                Style="{StaticResource MaterialDesignFloatingActionButton}"
+                                ToolTip="Add new speaker">
+                            <materialDesign:PackIcon
+                                Width="20"
+                                Height="20"
+                                Kind="Plus" />
+                        </Button>
                     </StackPanel>
                 </Grid>
             </Grid>
