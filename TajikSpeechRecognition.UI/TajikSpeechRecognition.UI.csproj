@@ -79,6 +79,7 @@
     </Compile>
     <Compile Include="Services\AudioService.cs" />
     <Compile Include="Services\CommandPrompt.cs" />
+    <Compile Include="Services\LM.cs" />
     <Compile Include="Services\ModelBuilder.cs" />
     <Compile Include="Services\ModelManager.cs" />
     <Compile Include="ViewModels\AppViewModel.cs" />

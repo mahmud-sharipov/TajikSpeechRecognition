@@ -129,10 +129,10 @@ namespace TajikSpeechRecognition.UI.Services
                 sw.Close();
                 var words = DataProvider.GetEntities<Word>();
                 sw = new StreamWriter(EtcDir + $"/{AppManager.ModelName}.phone");
-                sw.Write(ConfigTemplates.GetPhonemes(words.Select(w => w.Phonemes)));
+                sw.Write(ConfigTemplates.GetPhonemes(words.Select(w => w.Value)));
                 sw.Close();
 
-                var wordsDic = words.Select(w => w.Value + " " + w.Phonemes + "\r\n").ToList();
+                var wordsDic = words.Select(w => w.Value + " " + w.Value + "\r\n").ToList();
                 sw = new StreamWriter(EtcDir + $"/{AppManager.ModelName}.dic");
                 var sw2 = new StreamWriter(ModelOutputDir + $"/{AppManager.ModelName}.dic");
                 var sw3 = new StreamWriter($"{AppManager.TempDir}/tajik.txt");
