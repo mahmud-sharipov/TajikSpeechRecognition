@@ -42,21 +42,16 @@ namespace TajikSpeechRecognition.UI.Services
         {
             if (o == null) return;
 
-            AudioViewModel viewModel = null;
+            var viewModel = new AudioViewModel(null);
+            var content = new AudioPage() { DataContext = viewModel };
             if (o is Speaker speaker)
-            {
-                viewModel = new AudioViewModel(null);
                 viewModel.Audio.Speaker = speaker;
-            }
             else if (o is Text text)
-            {
-                viewModel = new AudioViewModel(null);
                 viewModel.Audio.Text = text;
-            }
             else
-                viewModel = new AudioViewModel(o as ObservableCollection<Audio>);
+                viewModel.Audios = o as ObservableCollection<Audio>;
 
-            await DialogHost.Show(new AudioPage() { DataContext = viewModel }, DialodIdentifiers.EntireWindow, AudioViewModel.ClosingEventHandler);
+            await DialogHost.Show(content, DialodIdentifiers.EntireWindow, AudioViewModel.ClosingEventHandler);
         }
     }
 }

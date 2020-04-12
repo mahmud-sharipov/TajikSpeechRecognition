@@ -82,7 +82,9 @@ namespace TajikSpeechRecognition.UI.ViewModels
             }
         }
 
-        public ICommand SaveAndCreateNew => new Command(o =>
+        public ICommand SaveAndCreateNew => new Command(SaveAndContinue);
+
+        public void SaveAndContinue(object o)
         {
             var result = AudioService.SaveAudio(Audio, DataProvider);
             if (result.Item1)
@@ -97,7 +99,7 @@ namespace TajikSpeechRecognition.UI.ViewModels
             }
             else
                 Error = result.Item2;
-        });
+        }
 
         #region Recognition
         readonly MMDeviceEnumerator DeviceEnumerator;
@@ -148,6 +150,7 @@ namespace TajikSpeechRecognition.UI.ViewModels
 
         public void StartRecording()
         {
+            if (isRecording) return;
             Error = "";
             if (selectedDevice == null)
             {

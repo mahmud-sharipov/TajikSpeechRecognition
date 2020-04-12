@@ -19,5 +19,19 @@ namespace TajikSpeechRecognition.UI.Pages
         {
             ((AudioViewModel)DataContext).StopRecording();
         }
+
+        private void BasePage_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.R)
+                ((AudioViewModel)DataContext).StartRecording();
+        }
+
+        private void BasePage_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.R)
+                ((AudioViewModel)DataContext).StopRecording();
+            else if (e.Key == System.Windows.Input.Key.N)
+                ((AudioViewModel)DataContext).SaveAndContinue(null);
+        }
     }
 }
