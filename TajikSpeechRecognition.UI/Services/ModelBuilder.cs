@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -134,13 +135,16 @@ namespace TajikSpeechRecognition.UI.Services
                 var wordsDic = words.Select(w => w.Value + " " + w.Phonemes + "\r\n").ToList();
                 sw = new StreamWriter(EtcDir + $"/{AppManager.ModelName}.dic");
                 var sw2 = new StreamWriter(ModelOutputDir + $"/{AppManager.ModelName}.dic");
+                var sw3 = new StreamWriter($"{AppManager.TempDir}/tajik.txt");
                 wordsDic.ForEach(w =>
                 {
                     sw.Write(w);
                     sw2.Write(w);
                 });
+                sw3.Write(string.Join("\r\n", words.Select(w => w.Value)));
                 sw.Close();
                 sw2.Close();
+                sw3.Close();
 
                 var audiosPath = GetAudios();
                 sw = new StreamWriter(EtcDir + $"/{AppManager.ModelName}_test.fileids");

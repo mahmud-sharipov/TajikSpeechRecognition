@@ -18,10 +18,8 @@ namespace TajikSpeechRecognition.Model
         public EntityContext() : base(GetConnectionString("dataset_app_db"))
         {
             if (!Database.Exists())
-            {
                 Database.Create();
 
-            }
             Configuration.LazyLoadingEnabled = true;
             Configuration.ProxyCreationEnabled = true;
             ObjectContext context = ((IObjectContextAdapter)this).ObjectContext;
@@ -31,8 +29,7 @@ namespace TajikSpeechRecognition.Model
         }
 
         static string GetConnectionString(string dbName, string userName = "root", string pass = "") =>
-            string.Format(ConfigurationManager.ConnectionStrings["mysqlCon"].ConnectionString,
-                "localhost", "3306", dbName, userName, pass);
+            string.Format(ConfigurationManager.ConnectionStrings["mysqlCon"].ConnectionString, "localhost", "3306", dbName, userName, pass);
 
         void Connection_StateChange(object sender, System.Data.StateChangeEventArgs e)
         {

@@ -10,7 +10,9 @@ namespace TajikSpeechRecognition.UI.General
 
         public static LogManager LogManager { get; set; }
 
-        public static ModelBuilder ModelBuilder{ get; set; }
+        public static ModelBuilder ModelBuilder { get; set; }
+
+        public static ModelManager ModelManager { get; set; }
 
         public static Dispatcher MainDispatcher { get; set; }
     }

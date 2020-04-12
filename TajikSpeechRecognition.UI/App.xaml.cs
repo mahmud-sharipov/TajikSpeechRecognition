@@ -13,7 +13,8 @@ namespace TajikSpeechRecognition.UI
             UIManager.MainDispatcher = Dispatcher;
             UIManager.DataProvider = new DataProvider();
             UIManager.LogManager = new LogManager();
-            UIManager.ModelBuilder = new ModelBuilder(UIManager.DataProvider, $"{AppManager.TempDir}/tajik.lm.DMP"); ;
+            UIManager.ModelBuilder = new ModelBuilder(UIManager.DataProvider, $"{AppManager.TempDir}/tajik.lm.DMP");
+            UIManager.ModelManager = new ModelManager(UIManager.DataProvider);
         }
     }
 }

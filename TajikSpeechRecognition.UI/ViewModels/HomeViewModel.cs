@@ -11,5 +11,7 @@ namespace TajikSpeechRecognition.UI.ViewModels
         }
 
         public ICommand BuildMidel => UIManager.ModelBuilder.Build;
+
+        public ICommand Recognize => UIManager.ModelManager.Recognize;
     }
 }
