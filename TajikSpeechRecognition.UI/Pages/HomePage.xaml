@@ -4,19 +4,38 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:TajikSpeechRecognition.UI.Pages"
-    xmlns:localGeneral="clr-namespace:TajikSpeechRecognition.UI.General"
     xmlns:localControl="clr-namespace:TajikSpeechRecognition.UI.Controls"
+    xmlns:localGeneral="clr-namespace:TajikSpeechRecognition.UI.General"
+    xmlns:materialDesign="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+        <Grid>
+            <StackPanel
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Orientation="Horizontal">
+                <Grid DataContext="{x:Static localGeneral:UIManager.ModelBuilder}">
+                    <Button
+                        Margin="10,5"
+                        materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding IsBuilding}"
+                        materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
+                        materialDesign:ButtonProgressAssist.Value="-1"
+                        Command="{Binding Build}"
+                        Content="Build model"
+                        IsEnabled="{Binding CanBuild}"
+                        Style="{StaticResource MaterialDesignRaisedButton}" />
+                </Grid>
+            </StackPanel>
+        </Grid>
         <Grid Grid.Row="1">
-            <localControl:LogViewerControl/>
+            <localControl:LogViewerControl />
         </Grid>
     </Grid>
 </localGeneral:BasePage>

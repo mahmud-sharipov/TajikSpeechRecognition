@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -28,7 +29,18 @@ namespace TajikSpeechRecognition.UI.Controls
         {
             DataContext = this;
             InitializeComponent();
+            LogManager.Logs.CollectionChanged += Logs_CollectionChanged;
         }
+
+        private void Logs_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            Dispatcher.Invoke(() =>
+            {
+                LogList.SelectedIndex = LogList.Items.Count - 1;
+                LogList.ScrollIntoView(LogList.SelectedItem);
+            });
+        }
+
         public ICommand Cleare => UIManager.LogManager.CleareLogs;
     }
 }

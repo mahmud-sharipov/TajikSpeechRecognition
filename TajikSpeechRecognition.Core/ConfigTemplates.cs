@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -318,7 +319,7 @@ namespace TajikSpeechRecognition.Core
         public static string GetPhonemes(IEnumerable<string> usedPhonemes)
         {
             var builder = new StringBuilder();
-            var phonemes = usedPhonemes.SelectMany(uf => uf.Trim().Split(' '));
+            var phonemes = usedPhonemes.SelectMany(uf => uf.Trim().Split(' ')).Distinct();
             foreach (var phonem in phonemes)
                 builder.AppendLine(phonem);
 

@@ -147,7 +147,7 @@ namespace TajikSpeechRecognition
                 var sw = new StreamWriter(modelDir + $"/{modelName}.cmd");
                 var cd = Directory.GetCurrentDirectory()[0].ToString().ToUpper();
                 cd = cd == "C" ? "" : $"/{cd}";
-                sw.WriteLine($"cd {cd} {AppManager.SphinxDir}\\pocketsphinx");
+                sw.WriteLine($"cd ../../sphinx/pocketsphinx");
                 sw.WriteLine($"pocketsphinx_continuous -inmic \"yes\" -hmm \"{modelDir}\\model_parameters\\{modelName}.ci_cont\" -dict \"{modelDir}\\etc\\{modelName}.dic\" -lm \"{modelDir}\\etc\\{modelName}.lm.DMP\" -logfn nul");
                 sw.Close();
 
@@ -308,6 +308,5 @@ namespace TajikSpeechRecognition
                 Log($"ERROR: {ex.Message}");
             }
         }
-
     }
 }

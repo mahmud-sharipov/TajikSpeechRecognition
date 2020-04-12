@@ -78,6 +78,8 @@
       <DependentUpon>TextPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\AudioService.cs" />
+    <Compile Include="Services\CommandPrompt.cs" />
+    <Compile Include="Services\ModelBuilder.cs" />
     <Compile Include="ViewModels\AppViewModel.cs" />
     <Compile Include="ViewModels\AudiosViewModel.cs" />
     <Compile Include="ViewModels\AudioViewModel.cs" />
