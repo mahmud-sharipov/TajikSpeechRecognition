@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TajikSpeechRecognition.Core
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TajikSpeechRecognition.UI", "TajikSpeechRecognition.UI\TajikSpeechRecognition.UI.csproj", "{14D6A72B-EB38-4E43-9BE1-4B93CEFE50EC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KaldiFilesGenerator", "KaldiFilesGenerator\KaldiFilesGenerator.csproj", "{4D597C99-B8A1-4106-9A54-A297B2F53A92}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,14 @@ Global
 		{14D6A72B-EB38-4E43-9BE1-4B93CEFE50EC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{14D6A72B-EB38-4E43-9BE1-4B93CEFE50EC}.Release|x64.ActiveCfg = Release|Any CPU
 		{14D6A72B-EB38-4E43-9BE1-4B93CEFE50EC}.Release|x64.Build.0 = Release|Any CPU
+		{4D597C99-B8A1-4106-9A54-A297B2F53A92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D597C99-B8A1-4106-9A54-A297B2F53A92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D597C99-B8A1-4106-9A54-A297B2F53A92}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4D597C99-B8A1-4106-9A54-A297B2F53A92}.Debug|x64.Build.0 = Debug|Any CPU
+		{4D597C99-B8A1-4106-9A54-A297B2F53A92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D597C99-B8A1-4106-9A54-A297B2F53A92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D597C99-B8A1-4106-9A54-A297B2F53A92}.Release|x64.ActiveCfg = Release|Any CPU
+		{4D597C99-B8A1-4106-9A54-A297B2F53A92}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
