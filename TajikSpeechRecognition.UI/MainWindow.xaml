@@ -51,7 +51,7 @@
         <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuToggleButton, Path=IsChecked}" IsRightDrawerOpen="{Binding SettingsIsOpen}">
             <materialDesign:DrawerHost.LeftDrawerContent>
                 <Grid>
-                    <Grid.RowDefinitions>
+                    <!--<Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
@@ -66,12 +66,12 @@
                         <Button Content="Button 8" />
                         <Button Content="Button 5" />
                         <Button Content="Button 0" />
-                    </StackPanel>
+                    </StackPanel>-->
                 </Grid>
             </materialDesign:DrawerHost.LeftDrawerContent>
             <materialDesign:DrawerHost.RightDrawerContent>
                 <Grid>
-                    <Grid.RowDefinitions>
+                    <!--<Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
@@ -86,7 +86,7 @@
                         <Button Content="Button 8" />
                         <Button Content="Button 5" />
                         <Button Content="Button 0" />
-                    </StackPanel>
+                    </StackPanel>-->
                 </Grid>
             </materialDesign:DrawerHost.RightDrawerContent>
             <Grid>

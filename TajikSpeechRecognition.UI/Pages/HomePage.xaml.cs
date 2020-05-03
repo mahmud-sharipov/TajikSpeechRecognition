@@ -14,11 +14,5 @@ namespace TajikSpeechRecognition.UI.Pages
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            //UIManager.ModelBuilder.Upload();
-            LM.Post();
-        }
     }
 }

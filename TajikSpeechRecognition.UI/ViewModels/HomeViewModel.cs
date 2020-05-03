@@ -1,5 +1,7 @@
-﻿using System.Windows.Input;
+﻿using MaterialDesignThemes.Wpf;
+using System.Windows.Input;
 using TajikSpeechRecognition.UI.General;
+using TajikSpeechRecognition.UI.Pages;
 
 namespace TajikSpeechRecognition.UI.ViewModels
 {
@@ -10,8 +12,12 @@ namespace TajikSpeechRecognition.UI.ViewModels
 
         }
 
-        public ICommand BuildMidel => UIManager.ModelBuilder.Build;
+        public ICommand Recognize => new Command(RecognizeText);
 
-        public ICommand Recognize => UIManager.ModelManager.Recognize;
+        private async void RecognizeText(object o)
+        {
+            var viewModel = new RecognizeViewModel();
+            await DialogHost.Show(new RecognizePage() { DataContext = viewModel }, DialodIdentifiers.EntireWindow);
+        }
     }
 }

@@ -71,6 +71,9 @@
     <Compile Include="Pages\AudioPage.xaml.cs">
       <DependentUpon>AudioPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\RecognizePage.xaml.cs">
+      <DependentUpon>RecognizePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SpeakerPage.xaml.cs">
       <DependentUpon>SpeakerPage.xaml</DependentUpon>
     </Compile>
@@ -86,6 +89,7 @@
     <Compile Include="ViewModels\AudiosViewModel.cs" />
     <Compile Include="ViewModels\AudioViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\RecognizeViewModel.cs" />
     <Compile Include="ViewModels\SpeakersViewModel.cs" />
     <Compile Include="ViewModels\SpeakerViewModel.cs" />
     <Compile Include="ViewModels\TextsViewModel.cs" />
@@ -124,6 +128,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RecognizePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

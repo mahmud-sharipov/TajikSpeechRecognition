@@ -15,17 +15,19 @@ namespace TajikSpeechRecognition.UI.General
         {
             var audio = o as Audio;
             if (audio != null)
-            {
-                if (SoundPlayer != null)
-                {
-                    SoundPlayer.Stop();
-                    SoundPlayer.Dispose();
-                }
-                SoundPlayer = new SoundPlayer($"{AppManager.AudiosDir}/{audio.FileName}.wav");
-                SoundPlayer.Load();
-                SoundPlayer.Play();
+                PlayAudio(audio, $"{AppManager.AudiosDir}/{audio.FileName}.wav");
+        }
 
+        public static void PlayAudio(Audio audio, string audioDir)
+        {
+            if (SoundPlayer != null)
+            {
+                SoundPlayer.Stop();
+                SoundPlayer.Dispose();
             }
+            SoundPlayer = new SoundPlayer($"{audioDir}/{audio.FileName}.wav");
+            SoundPlayer.Load();
+            SoundPlayer.Play();
         }
     }
 }

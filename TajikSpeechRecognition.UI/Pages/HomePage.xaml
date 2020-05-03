@@ -32,29 +32,13 @@
                         IsEnabled="{Binding CanBuild}"
                         Style="{StaticResource MaterialDesignRaisedButton}" />
                 </Grid>
-                <Grid DataContext="{x:Static localGeneral:UIManager.ModelManager}">
+                <Grid>
                     <Button
                         Margin="10,5"
                         Command="{Binding Recognize}"
-                        Content="Start recognize"
-                        IsEnabled="{Binding CanRecognize}"
+                        Content="Recognize"
                         Style="{StaticResource MaterialDesignRaisedButton}" />
                 </Grid>
-                <Grid DataContext="{x:Static localGeneral:UIManager.ModelManager}">
-                    <Button
-                        Margin="10,5"
-                        Command="{Binding StopRecognize}"
-                        Content="Stop recognize"
-                        IsEnabled="{Binding IsRecognizing}"
-                        Style="{StaticResource MaterialDesignRaisedButton}" />
-                </Grid>
-                <!--<Grid DataContext="{x:Static localGeneral:UIManager.ModelManager}">
-                    <Button
-                        Margin="10,5"
-                        Click="Button_Click"
-                        Content="Generate LM file"
-                        Style="{StaticResource MaterialDesignRaisedButton}" />
-                </Grid>-->
             </StackPanel>
         </Grid>
         <Grid Grid.Row="1">

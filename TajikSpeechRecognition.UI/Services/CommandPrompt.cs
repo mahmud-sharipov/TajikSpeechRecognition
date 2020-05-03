@@ -50,7 +50,7 @@ namespace TajikSpeechRecognition.UI.Services
             startInfo.Arguments = script;
             startInfo.UseShellExecute = false;
             startInfo.CreateNoWindow = true;
-          //  startInfo.WindowStyle= ProcessWindowStyle.Normal;
+            startInfo.WindowStyle= ProcessWindowStyle.Normal;
             startInfo.RedirectStandardError = true;
             startInfo.RedirectStandardInput = true;
             startInfo.RedirectStandardOutput = true;

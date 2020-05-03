@@ -21,7 +21,7 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Amber.xaml" />
 
                 <!--  Material Design: MahApps Compatibility  -->
-               
+
                 <ResourceDictionary Source="pack://application:,,,/Dragablz;component/Themes/materialdesign.xaml" />
 
                 <!--  local themes and styles  -->
