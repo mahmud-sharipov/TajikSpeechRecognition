@@ -154,7 +154,7 @@ namespace TajikSpeechRecognition.UI.ViewModels
             Error = "";
             if (selectedDevice == null)
             {
-                Error = "Device is not selected";
+                Error = "Таҷҳизот барои сабт интихоб нашудааст!";
                 return;
             }
             sourceStream = new WaveIn

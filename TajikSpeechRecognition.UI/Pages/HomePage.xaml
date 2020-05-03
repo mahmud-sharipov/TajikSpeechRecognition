@@ -16,28 +16,41 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Grid>
+        <Grid Margin="0,0,0,-20">
             <StackPanel
                 HorizontalAlignment="Right"
                 VerticalAlignment="Center"
                 Orientation="Horizontal">
                 <Grid DataContext="{x:Static localGeneral:UIManager.ModelBuilder}">
                     <Button
+                        Width="65"
+                        Height="45"
                         Margin="10,5"
                         materialDesign:ButtonProgressAssist.IsIndeterminate="{Binding IsBuilding}"
                         materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
                         materialDesign:ButtonProgressAssist.Value="-1"
                         Command="{Binding Build}"
-                        Content="Build model"
                         IsEnabled="{Binding CanBuild}"
-                        Style="{StaticResource MaterialDesignRaisedButton}" />
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        ToolTip="Омӯзонданӣ модел">
+                        <materialDesign:PackIcon
+                            Width="35"
+                            Height="35"
+                            Kind="PackageVariant" />
+                    </Button>
                 </Grid>
                 <Grid>
                     <Button
+                        Width="65"
+                        Height="45"
                         Margin="10,5"
                         Command="{Binding Recognize}"
-                        Content="Recognize"
-                        Style="{StaticResource MaterialDesignRaisedButton}" />
+                        Style="{StaticResource MaterialDesignRaisedButton}">
+                        <materialDesign:PackIcon
+                            Width="35"
+                            Height="35"
+                            Kind="PlaySpeed" />
+                    </Button>
                 </Grid>
             </StackPanel>
         </Grid>

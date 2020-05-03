@@ -20,15 +20,14 @@
                     <ColumnDefinition Width="auto" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock
-                    Grid.Row="4"
-                    Margin="0,0,5,0"
+                <wpf:PackIcon
+                    Width="25"
+                    Height="25"
+                    Margin="0,5,15,0"
                     VerticalAlignment="Center"
                     FontWeight="Bold"
-                    Style="{StaticResource MaterialDesignSubheadingTextBlock}"
-                    Text="Microphone: " />
+                    Kind="Microphone" />
                 <ComboBox
-                    Grid.Row="4"
                     Grid.Column="1"
                     VerticalAlignment="Center"
                     ItemsSource="{Binding Devices}"
@@ -50,17 +49,25 @@
                     wpf:ButtonProgressAssist.IsIndeterminate="True"
                     wpf:ButtonProgressAssist.IsIndicatorVisible="{Binding IsRecording}"
                     wpf:ButtonProgressAssist.Value="-1"
-                    Content="{materialDesign:PackIcon Microphone}"
                     PreviewMouseDown="Button_MouseDown"
                     PreviewMouseUp="Button_MouseUp"
-                    Style="{StaticResource MaterialDesignFloatingActionButton}" />
+                    Style="{StaticResource MaterialDesignFloatingActionButton}">
+                    <wpf:PackIcon
+                        Width="25"
+                        Height="25"
+                        Kind="Microphone" />
+                </Button>
                 <Button
                     Grid.Column="1"
                     Margin="10,0,0,0"
                     Command="{Binding PlayAudio}"
-                    Content="{materialDesign:PackIcon Audio}"
                     Style="{StaticResource MaterialDesignFloatingActionButton}"
-                    ToolTip="MaterialDesignFlatButton" />
+                    ToolTip="MaterialDesignFlatButton">
+                    <wpf:PackIcon
+                        Width="25"
+                        Height="25"
+                        Kind="Audio" />
+                </Button>
                 <ProgressBar
                     x:Name="Progress"
                     Grid.Column="2"
@@ -95,7 +102,10 @@
                     <Button.CommandParameter>
                         <system:Boolean>False</system:Boolean>
                     </Button.CommandParameter>
-                    CLOSE
+                    <wpf:PackIcon
+                        Width="25"
+                        Height="25"
+                        Kind="Close" />
                 </Button>
             </StackPanel>
         </Grid>

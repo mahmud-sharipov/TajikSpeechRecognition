@@ -33,11 +33,7 @@
         </ResourceDictionary>
     </Controls:MetroWindow.Resources>
     <Controls:MetroWindow.RightWindowCommands>
-        <Controls:WindowCommands>
-            <!--<Button Command="{Binding OpenHomePage}">
-                <materialDesign:PackIcon Kind="Home" Height="21" Width="21" />
-            </Button>-->
-        </Controls:WindowCommands>
+        <Controls:WindowCommands />
     </Controls:MetroWindow.RightWindowCommands>
     <Controls:MetroWindow.LeftWindowCommands>
         <Controls:WindowCommands>
@@ -96,28 +92,28 @@
                             <dragablz:TabablzControl.InterTabController>
                                 <dragablz:InterTabController />
                             </dragablz:TabablzControl.InterTabController>
-                            <TabItem Header="HOME">
+                            <TabItem Header="АСОСӢ">
                                 <localPages:HomePage Margin="8">
                                     <localPages:HomePage.DataContext>
                                         <localViewModels:HomeViewModel />
                                     </localPages:HomePage.DataContext>
                                 </localPages:HomePage>
                             </TabItem>
-                            <TabItem Header="SPEAKERS">
+                            <TabItem Header="ДИКТОРҲО">
                                 <localPages:SpeakersPage Margin="8">
                                     <localPages:SpeakersPage.DataContext>
                                         <localViewModels:SpeakersViewModel />
                                     </localPages:SpeakersPage.DataContext>
                                 </localPages:SpeakersPage>
                             </TabItem>
-                            <TabItem Header="TEXTS">
+                            <TabItem Header="МАТНҲО">
                                 <localPages:TextsPage Margin="8">
                                     <localPages:TextsPage.DataContext>
                                         <localViewModels:TextsViewModel />
                                     </localPages:TextsPage.DataContext>
                                 </localPages:TextsPage>
                             </TabItem>
-                            <TabItem Header="AUDIOS">
+                            <TabItem Header="САБТҲО">
                                 <localPages:AudiosPage Margin="8">
                                     <localPages:AudiosPage.DataContext>
                                         <localViewModels:AudiosViewModel />
@@ -125,39 +121,6 @@
                                 </localPages:AudiosPage>
                             </TabItem>
                         </dragablz:TabablzControl>
-
-                        <!--<localControls:AdvancedTabablzControl
-                            x:Name="MyTabablzControl"
-                            Margin="0,-1,0,1"
-                            BorderThickness="0"
-                            ShowDefaultCloseButton="True">
-                        -->
-                        <!--<localControls:AdvancedTabablzControl.InterTabController>
-                                <dragablz:InterTabController />
-                            </localControls:AdvancedTabablzControl.InterTabController>-->
-                        <!--
-                            <localControls:AdvancedTabablzControl.HeaderItemTemplate>
-                                <DataTemplate>
-                                    <Grid>
-                                        <Grid.ContextMenu>
-                                            <ContextMenu>
-                                                <MenuItem Command="{Binding ViewModel.SaveChanges}" Header="Сохранить изменения">
-                                                    <MenuItem.Icon>
-                                                        <materialDesign:PackIcon Kind="ContentSaveOutline" />
-                                                    </MenuItem.Icon>
-                                                </MenuItem>
-                                                <MenuItem Command="{Binding ViewModel.DiscardChanges}" Header="Отменить изменения">
-                                                    <MenuItem.Icon>
-                                                        <materialDesign:PackIcon Kind="FileDiscard" />
-                                                    </MenuItem.Icon>
-                                                </MenuItem>
-                                            </ContextMenu>
-                                        </Grid.ContextMenu>
-                                        <TextBlock Text="{Binding Title}" />
-                                    </Grid>
-                                </DataTemplate>
-                            </localControls:AdvancedTabablzControl.HeaderItemTemplate>
-                        </localControls:AdvancedTabablzControl>-->
                     </dockablz:Layout>
                 </Grid>
                 <materialDesign:Snackbar x:Name="Snackbar" MessageQueue="{materialDesign:MessageQueue}" />

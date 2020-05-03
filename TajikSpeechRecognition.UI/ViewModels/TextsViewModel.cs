@@ -85,7 +85,6 @@ namespace TajikSpeechRecognition.UI.ViewModels
                 NewText = null;
                 DataProvider.SaveChanges();
             }
-            //eventArgs.Cancel();
         }
 
         protected string GetWordPhonemes(string word)

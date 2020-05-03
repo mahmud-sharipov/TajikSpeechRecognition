@@ -36,6 +36,8 @@
             set => OnPropertySetting(nameof(Audios), value, ref _audios);
         }
 
+        public virtual string Gender => IsMale ? "Мард" : "Зан";
+
         public override string ToString() => Name;
     }
 
@@ -45,6 +47,7 @@
         {
             var config = modelBuilder.Entity<Speaker>();
             config.ToTable(prefix + "Speakers").HasKey(s => s.Guid);
+            config.Ignore(p => p.Gender);
             config.HasMany(t => t.Audios).WithRequired(s => s.Speaker).WillCascadeOnDelete(true);
         }
     }

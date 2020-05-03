@@ -1,13 +1,13 @@
 ﻿<localGeneral:BasePage
     x:Class="TajikSpeechRecognition.UI.Pages.SpeakersPage"
-    x:Name="thisPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:materialDesign="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:localGeneral="clr-namespace:TajikSpeechRecognition.UI.General"
     xmlns:localServices="clr-namespace:TajikSpeechRecognition.UI.Services"
+    xmlns:materialDesign="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="thisPage"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
@@ -41,9 +41,9 @@
                                         <StackPanel Grid.Column="1" Margin="15,0,0,0">
                                             <TextBlock FontWeight="Bold" Text="{Binding Name}" />
                                             <StackPanel Orientation="Horizontal">
-                                                <TextBlock Text="Is male: " />
-                                                <TextBlock Margin="0,0,20,0" Text="{Binding IsMale}" />
-                                                <TextBlock Text="Age: " />
+                                                <TextBlock Text="Ҷинс: " />
+                                                <TextBlock Margin="0,0,20,0" Text="{Binding Gender}" />
+                                                <TextBlock Text="Синну сол: " />
                                                 <TextBlock Text="{Binding Age}" />
                                             </StackPanel>
                                         </StackPanel>
@@ -86,21 +86,21 @@
                                 Width="*"
                                 MaxWidth="450"
                                 Binding="{Binding Text.Value}"
-                                Header="Text"
+                                Header="Матн"
                                 IsReadOnly="True" />
 
                             <DataGridTextColumn
                                 Width="*"
                                 MaxWidth="200"
                                 Binding="{Binding Text.Description}"
-                                Header="Description"
+                                Header="Эзоҳ"
                                 IsReadOnly="True" />
 
                             <DataGridTextColumn
                                 Width="auto"
                                 MaxWidth="150"
                                 Binding="{Binding Text.ExpectedTime}"
-                                Header="Expected time"
+                                Header="Дарозии сабт"
                                 IsReadOnly="True" />
 
                             <DataGridTemplateColumn MinWidth="60" MaxWidth="60">
@@ -147,23 +147,23 @@
                         HorizontalAlignment="Right"
                         Orientation="Horizontal">
                         <TextBlock
-                            FontSize="20"
                             VerticalAlignment="Center"
+                            FontSize="20"
                             FontWeight="Bold"
-                            Text="Total audio: " />
+                            Text="Миқдори сабт: " />
                         <TextBlock
-                            FontSize="20"
                             VerticalAlignment="Center"
+                            FontSize="20"
                             FontWeight="Bold"
                             Text="{Binding SelectedSpeaker.Audios.Count}" />
                         <Button
-                                Margin="30,0,20,0"
-                                HorizontalAlignment="Right"
-                                VerticalAlignment="Bottom"
-                                Command="{x:Static localServices:AudioService.AddNewAudio}"
-                                CommandParameter="{Binding SelectedSpeaker}"
-                                Style="{StaticResource MaterialDesignFloatingActionButton}"
-                                ToolTip="Add new speaker">
+                            Margin="30,0,20,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Command="{x:Static localServices:AudioService.AddNewAudio}"
+                            CommandParameter="{Binding SelectedSpeaker}"
+                            Style="{StaticResource MaterialDesignFloatingActionButton}"
+                            ToolTip="Add new speaker">
                             <materialDesign:PackIcon
                                 Width="20"
                                 Height="20"

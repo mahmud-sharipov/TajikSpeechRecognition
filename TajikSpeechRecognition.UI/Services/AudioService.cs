@@ -16,13 +16,13 @@ namespace TajikSpeechRecognition.UI.Services
         public static Tuple<bool, string> SaveAudio(Audio audio, DataProvider provider)
         {
             if (!File.Exists($"{AppManager.AudiosDir}/{audio.FileName}.wav"))
-                return new Tuple<bool, string>(false, "Audio doesn't recorded");
+                return new Tuple<bool, string>(false, "Аудио ҳоло сабт нашудааст!");
             else if (audio.Speaker == null && audio.Text == null)
-                return new Tuple<bool, string>(false, "Speaker and text are required");
+                return new Tuple<bool, string>(false, "Диктор ва матн бояд ҳатман интихоб шавад!");
             else if (audio.Speaker == null)
-                return new Tuple<bool, string>(false, "Speaker is required");
+                return new Tuple<bool, string>(false, "Диктор бояд ҳатман интихоб шавад!");
             else if (audio.Text == null)
-                return new Tuple<bool, string>(false, "Text is required");
+                return new Tuple<bool, string>(false, "Матн бояд ҳатман интихоб шавад!");
 
             provider.Add(audio);
             provider.SaveChanges();

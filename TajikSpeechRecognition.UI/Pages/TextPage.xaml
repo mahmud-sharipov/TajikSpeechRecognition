@@ -1,9 +1,11 @@
-﻿<localGeneral:BasePage x:Class="TajikSpeechRecognition.UI.Pages.TextPage"
-                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                       xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
-                       xmlns:system="clr-namespace:System;assembly=mscorlib"
-                       xmlns:localGeneral="clr-namespace:TajikSpeechRecognition.UI.General">
+﻿<localGeneral:BasePage
+    x:Class="TajikSpeechRecognition.UI.Pages.TextPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:localGeneral="clr-namespace:TajikSpeechRecognition.UI.General"
+    xmlns:materialDesign="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
     <Grid
         Width="350"
         Margin="20"
@@ -16,24 +18,24 @@
         </Grid.RowDefinitions>
         <TextBox
             Margin="0,5"
-            wpf:HintAssist.Hint="Text"
+            wpf:HintAssist.Hint="Матн"
             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
             Text="{Binding Value}" />
 
         <TextBox
             Grid.Row="1"
             Margin="0,5"
-            wpf:HintAssist.Hint="Description"
+            wpf:HintAssist.Hint="Эзоҳ"
             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
             Text="{Binding Description}" />
 
         <TextBox
             Grid.Row="2"
             Margin="0,5"
-            wpf:HintAssist.Hint="Expected time"
+            wpf:HintAssist.Hint="Дарозии сабт"
             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
             Text="{Binding ExpectedTime}" />
-        
+
         <StackPanel
             Grid.Row="3"
             HorizontalAlignment="Right"
@@ -43,7 +45,10 @@
                 <Button.CommandParameter>
                     <system:Boolean>True</system:Boolean>
                 </Button.CommandParameter>
-                SAVE
+                <wpf:PackIcon
+                    Width="25"
+                    Height="25"
+                    Kind="Check" />
             </Button>
             <Button
                 Margin="8,0,0,0"
@@ -53,7 +58,10 @@
                 <Button.CommandParameter>
                     <system:Boolean>False</system:Boolean>
                 </Button.CommandParameter>
-                CANCEL
+                <wpf:PackIcon
+                    Width="25"
+                    Height="25"
+                    Kind="Close" />
             </Button>
         </StackPanel>
     </Grid>

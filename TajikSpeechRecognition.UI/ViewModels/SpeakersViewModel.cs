@@ -74,7 +74,6 @@ namespace TajikSpeechRecognition.UI.ViewModels
                 SelectedSpeaker = NewSpeaker;
                 NewSpeaker = null;
             }
-            //eventArgs.Cancel();
         }
         #endregion
     }

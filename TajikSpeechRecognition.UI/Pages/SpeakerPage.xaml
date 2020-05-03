@@ -1,12 +1,12 @@
 ﻿<localGeneral:BasePage
     x:Class="TajikSpeechRecognition.UI.Pages.SpeakerPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
-    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:localGeneral="clr-namespace:TajikSpeechRecognition.UI.General"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
     mc:Ignorable="d">
     <Grid
         Width="350"
@@ -20,20 +20,20 @@
         </Grid.RowDefinitions>
         <TextBox
             Margin="0,5"
-            wpf:HintAssist.Hint="Name"
+            wpf:HintAssist.Hint="Ном"
             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
             Text="{Binding Name}" />
 
         <TextBox
             Grid.Row="1"
             Margin="0,5"
-            wpf:HintAssist.Hint="Age"
+            wpf:HintAssist.Hint="Синну сол"
             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
             Text="{Binding Age}" />
 
         <CheckBox
             Grid.Row="2"
-            Content="Male"
+            Content="Мард"
             Style="{StaticResource MaterialDesignCheckBox}" />
 
         <StackPanel
@@ -45,7 +45,8 @@
                 <Button.CommandParameter>
                     <system:Boolean>True</system:Boolean>
                 </Button.CommandParameter>
-                SAVE
+                <wpf:PackIcon Kind="Check" Width="25"
+                        Height="25"/>
             </Button>
             <Button
                 Margin="8,0,0,0"
@@ -55,7 +56,8 @@
                 <Button.CommandParameter>
                     <system:Boolean>False</system:Boolean>
                 </Button.CommandParameter>
-                CANCEL
+                <wpf:PackIcon Kind="Close" Width="25"
+                        Height="25"/>
             </Button>
         </StackPanel>
     </Grid>

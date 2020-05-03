@@ -31,17 +31,18 @@
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
 
-                <TextBlock
-                    Margin="0,0,5,0"
+                <wpf:PackIcon
+                    Width="25"
+                    Height="25"
+                    Margin="0,5,15,0"
                     VerticalAlignment="Center"
                     FontWeight="Bold"
-                    Style="{StaticResource MaterialDesignSubheadingTextBlock}"
-                    Text="Speaker: " />
+                    Kind="UserSettings" />
                 <ComboBox
                     Grid.Column="1"
                     MinWidth="72"
                     VerticalAlignment="Center"
-                    materialDesign:HintAssist.Hint="Speaker.."
+                    wpf:HintAssist.Hint="Диктор.."
                     IsEditable="True"
                     ItemsSource="{Binding FilteredSpeakers}"
                     SelectedItem="{Binding Audio.Speaker}"
@@ -58,19 +59,20 @@
                     </ComboBox.ItemTemplate>
                 </ComboBox>
 
-                <TextBlock
+                <wpf:PackIcon
                     Grid.Row="2"
-                    Margin="0,0,5,0"
+                    Width="25"
+                    Height="25"
+                    Margin="0,5,15,0"
                     VerticalAlignment="Center"
                     FontWeight="Bold"
-                    Style="{StaticResource MaterialDesignSubheadingTextBlock}"
-                    Text="Text: " />
+                    Kind="FormatText" />
                 <ComboBox
                     Grid.Row="2"
                     Grid.Column="1"
                     MinWidth="72"
                     VerticalAlignment="Center"
-                    materialDesign:HintAssist.Hint="Text.."
+                    wpf:HintAssist.Hint="Матн.."
                     IsEditable="True"
                     ItemsSource="{Binding FilteredTexts}"
                     SelectedItem="{Binding Audio.Text}"
@@ -87,13 +89,14 @@
                     </ComboBox.ItemTemplate>
                 </ComboBox>
 
-                <TextBlock
+                <wpf:PackIcon
                     Grid.Row="4"
-                    Margin="0,0,5,0"
+                    Width="25"
+                    Height="25"
+                    Margin="0,5,15,0"
                     VerticalAlignment="Center"
                     FontWeight="Bold"
-                    Style="{StaticResource MaterialDesignSubheadingTextBlock}"
-                    Text="Microphone: " />
+                    Kind="Microphone" />
                 <ComboBox
                     Grid.Row="4"
                     Grid.Column="1"
@@ -114,20 +117,28 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Button
-                    materialDesign:ButtonProgressAssist.IsIndeterminate="True"
-                    materialDesign:ButtonProgressAssist.IsIndicatorVisible="{Binding IsRecording}"
-                    materialDesign:ButtonProgressAssist.Value="-1"
-                    Content="{materialDesign:PackIcon Microphone}"
+                    wpf:ButtonProgressAssist.IsIndeterminate="True"
+                    wpf:ButtonProgressAssist.IsIndicatorVisible="{Binding IsRecording}"
+                    wpf:ButtonProgressAssist.Value="-1"
                     PreviewMouseDown="Button_MouseDown"
                     PreviewMouseUp="Button_MouseUp"
-                    Style="{StaticResource MaterialDesignFloatingActionButton}" />
+                    Style="{StaticResource MaterialDesignFloatingActionButton}">
+                    <wpf:PackIcon
+                        Width="25"
+                        Height="25"
+                        Kind="Microphone" />
+                </Button>
                 <Button
                     Grid.Column="1"
                     Margin="10,0,0,0"
                     Command="{Binding PlayAudio}"
-                    Content="{materialDesign:PackIcon Audio}"
                     Style="{StaticResource MaterialDesignFloatingActionButton}"
-                    ToolTip="MaterialDesignFlatButton" />
+                    ToolTip="MaterialDesignFlatButton">
+                    <wpf:PackIcon
+                        Width="25"
+                        Height="25"
+                        Kind="Audio" />
+                </Button>
                 <ProgressBar
                     x:Name="Progress"
                     Grid.Column="2"
@@ -148,10 +159,12 @@
                 Grid.Row="3"
                 HorizontalAlignment="Right"
                 Orientation="Horizontal">
-                <Button
-                    Command="{Binding SaveAndCreateNew}"
-                    Content="SAVE / CONTINUE"
-                    IsDefault="True" />
+                <Button Command="{Binding SaveAndCreateNew}" IsDefault="True">
+                    <wpf:PackIcon
+                        Width="25"
+                        Height="25"
+                        Kind="PlaylistAdd" />
+                </Button>
                 <Button
                     Margin="8,0"
                     Command="{x:Static wpf:DialogHost.CloseDialogCommand}"
@@ -159,7 +172,10 @@
                     <Button.CommandParameter>
                         <system:Boolean>True</system:Boolean>
                     </Button.CommandParameter>
-                    SAVE / CLOSE
+                    <wpf:PackIcon
+                        Width="25"
+                        Height="25"
+                        Kind="Check" />
                 </Button>
                 <Button
                     Command="{x:Static wpf:DialogHost.CloseDialogCommand}"
@@ -168,7 +184,10 @@
                     <Button.CommandParameter>
                         <system:Boolean>False</system:Boolean>
                     </Button.CommandParameter>
-                    CANCEL
+                    <wpf:PackIcon
+                        Width="25"
+                        Height="25"
+                        Kind="Close" />
                 </Button>
             </StackPanel>
         </Grid>
