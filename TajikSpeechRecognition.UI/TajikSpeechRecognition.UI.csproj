@@ -35,9 +35,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -214,7 +218,9 @@
       <Version>1.10.0</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\icon.ico" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TajikSpeechRecognition.Core\TajikSpeechRecognition.Core.csproj">
       <Project>{9f546831-ab22-4abc-81cd-f0e9011c5b0c}</Project>
@@ -224,6 +230,9 @@
       <Project>{453cf6f8-d3ce-46b2-a5c6-223be8542855}</Project>
       <Name>TajikSpeechRecognition.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SplashScreen Include="SplashScreen1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

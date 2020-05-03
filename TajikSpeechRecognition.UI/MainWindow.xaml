@@ -40,7 +40,7 @@
             <materialDesign:PackIcon
                 Margin="5,0"
                 VerticalAlignment="Center"
-                Kind="Notebook" />
+                Kind="Buffer" />
         </Controls:WindowCommands>
     </Controls:MetroWindow.LeftWindowCommands>
     <materialDesign:DialogHost Identifier="{x:Static localGeneral:DialodIdentifiers.EntireWindow}">
